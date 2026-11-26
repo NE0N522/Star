@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f3f8fc">
+  <meta name="description" content="Покупка Telegram Stars по фиксированной цене. Выберите пакет, оплатите и отправьте чек администратору.">
+  <title>Звёзды для Telegram — быстрая покупка</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script src="config.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <svg class="icon-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.6 2.72 5.51 6.08.88-4.4 4.29 1.04 6.05L12 16.47l-5.44 2.86 1.04-6.05L3.2 8.99l6.08-.88L12 2.6Z" fill="currentColor" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.7"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4.4 4.4L19 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 20 6v5c0 5-3.4 8.3-8 10-4.6-1.7-8-5-8-10V6l8-3Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.7"/><path d="m8.5 12 2.2 2.2 4.8-4.8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 11.5a7.5 7.5 0 0 1-8 7.5 9 9 0 0 1-3.7-.8L4 20l1.2-3.7A7.1 7.1 0 0 1 4 12c0-4.1 3.6-7.5 8-7.5s8 3 8 7Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.7"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24"><path d="M4 10h16v10H4zM3 7h18v3H3zM12 7v13" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.7"/><path d="M12 7c-4 0-5-1.2-5-2.5S8 2 9.2 2C11.4 2 12 7 12 7Zm0 0c4 0 5-1.2 5-2.5S16 2 14.8 2C12.6 2 12 7 12 7Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"/></symbol>
+  </svg>
+
+  <div class="page-shell">
+    <button class="promo-ribbon" id="open-promo" type="button" aria-haspopup="dialog" aria-controls="promo-dialog">
+      <span class="promo-ribbon-icon"><svg class="icon" aria-hidden="true"><use href="#i-gift"/></svg></span>
+      <span class="promo-ribbon-copy"><strong>Приведи друга — получи подарок «Медведь»</strong><span>За каждого друга. Без ограничений</span></span>
+      <svg class="icon promo-arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+    </button>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="На главную">
+        <span class="brand-mark"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></span>
+        <span class="brand-name">star<span>drop</span></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Основная навигация">
+        <a href="#packages">Пакеты</a>
+        <a href="#how-it-works">Как купить</a>
+      </nav>
+      <a class="header-support" href="https://t.me/op_star" target="_blank" rel="noopener noreferrer">
+        <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg><span>Поддержка</span>
+      </a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span>Telegram Stars · покупка в пару касаний</div>
+          <h1 id="hero-title">Звёзды для Telegram.<br><span>Просто и понятно.</span></h1>
+          <p class="hero-description">Выбери количество, переведи точную сумму и пришли чек администратору. Все пакеты — по одной фиксированной цене.</p>
+          <div class="price-promise"><span class="promise-star"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></span><span><strong>1 звезда = 1,50 ₽</strong><small>Цена сразу видна до оплаты</small></span></div>
+          <a class="hero-link" href="#packages">Выбрать пакет <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="hero-art" aria-label="Пример пакета: 1 000 звёзд за 1 500 рублей">
+          <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+          <div class="hero-spark spark-one"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></div>
+          <div class="hero-spark spark-two"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></div>
+          <div class="showcase-card">
+            <div class="showcase-top"><span class="showcase-label">ТВОЙ ПАКЕТ</span><span class="showcase-dot"></span></div>
+            <div class="showcase-star"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></div>
+            <div class="showcase-amount">1 000 <span>звёзд</span></div>
+            <div class="showcase-divider"></div>
+            <div class="showcase-bottom"><span>К оплате</span><strong>1 500 ₽</strong></div>
+          </div>
+          <span class="art-caption"><span class="caption-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>Без скрытых доплат</span>
+        </div>
+      </section>
+
+      <section class="shop-section" id="packages" aria-labelledby="packages-title">
+        <div class="section-heading">
+          <div><div class="section-kicker">ПОД ТВОЮ ЗАДАЧУ</div><h2 id="packages-title">Выбери количество звёзд</h2><p>Сумма пересчитается автоматически</p></div>
+          <div class="fixed-rate"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><span>Фиксированная цена</span></div>
+        </div>
+
+        <div class="shop-layout">
+          <div class="packages-column">
+            <div class="filter-row" role="group" aria-label="Фильтр пакетов">
+              <button class="filter-chip is-active" type="button" data-filter="all" aria-pressed="true">Все пакеты</button>
+              <button class="filter-chip" type="button" data-filter="small" aria-pressed="false">До 750</button>
+              <button class="filter-chip" type="button" data-filter="thousands" aria-pressed="false">1–10 тыс.</button>
+              <button class="filter-chip" type="button" data-filter="large" aria-pressed="false">25–500 тыс.</button>
+              <button class="filter-chip" type="button" data-filter="millions" aria-pressed="false">От 1 млн</button>
+            </div>
+            <div class="package-grid" id="package-grid" aria-label="Доступные пакеты Telegram Stars"></div>
+            <p class="package-note"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>Цена фиксированная: 1 звезда стоит 1,50 ₽</p>
+          </div>
+
+          <aside class="order-card" aria-label="Выбранный пакет">
+            <div class="order-card-header"><span class="order-label">ТВОЙ ЗАКАЗ</span><span class="order-status"><span></span>Готов к оформлению</span></div>
+            <div class="selected-package"><div class="selected-star"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></div><div><strong id="selected-count">100</strong><span>Telegram Stars</span></div></div>
+            <div class="order-line"><span>Стоимость пакета</span><strong id="selected-price">150 ₽</strong></div>
+            <div class="order-line"><span>Комиссия</span><strong class="free-label">0 ₽</strong></div>
+            <div class="order-total"><span>Итого</span><strong id="selected-total">150 ₽</strong></div>
+            <button class="primary-button order-button" id="order-button" type="button">Перейти к заказу <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <p class="order-secure"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><span id="order-secure-text">Чек отправишь напрямую администратору</span></p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="how-section" id="how-it-works" aria-labelledby="how-title">
+        <div class="section-heading how-heading"><div><div class="section-kicker">БЕЗ ЛИШНИХ ШАГОВ</div><h2 id="how-title">Как купить</h2></div><a class="how-help" href="https://t.me/op_star" target="_blank" rel="noopener noreferrer">Нужна помощь? <span>@op_star</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+        <div class="steps-grid">
+          <article class="step-card"><span class="step-number">01</span><span class="step-icon step-icon-blue"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></span><h3>Выбери пакет</h3><p>Нажми на нужное количество — цена рассчитается сразу.</p></article>
+          <article class="step-card"><span class="step-number">02</span><span class="step-icon step-icon-violet"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span><h3 id="step-two-title">Оплати заказ</h3><p id="step-two-text">Переведи сумму на реквизиты Сбера из окна оформления.</p></article>
+          <article class="step-card"><span class="step-number">03</span><span class="step-icon step-icon-green"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg></span><h3 id="step-three-title">Напиши админу</h3><p id="step-three-text">Открой чат @op_star и отправь юзернейм вместе с фото чека.</p></article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><a class="brand footer-brand" href="#top"><span class="brand-mark"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></span><span class="brand-name">star<span>drop</span></span></a><p>Вопросы по заказу? <a href="https://t.me/op_star" target="_blank" rel="noopener noreferrer">Напиши @op_star</a></p><span class="footer-rate">1 звезда = 1,50 ₽</span></footer>
+  </div>
+
+  <div class="mobile-buy-bar" aria-label="Оформить выбранный пакет"><div class="mobile-buy-summary"><span>Итого</span><strong id="mobile-total">150 ₽</strong></div><button class="primary-button" id="mobile-order-button" type="button">Купить пакет <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+
+  <dialog class="modal promo-modal" id="promo-dialog" aria-labelledby="promo-title">
+    <div class="modal-scroll">
+      <button class="modal-close" type="button" data-close-dialog aria-label="Закрыть окно"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+      <div class="promo-modal-art" aria-hidden="true">
+        <div class="bear-halo"></div><svg class="bear-illustration" viewBox="0 0 160 160" role="presentation">
+          <circle cx="43" cy="42" r="26" fill="#9b6542"/><circle cx="117" cy="42" r="26" fill="#9b6542"/><circle cx="43" cy="42" r="12" fill="#d9a17b"/><circle cx="117" cy="42" r="12" fill="#d9a17b"/>
+          <path d="M28 79c0-30 23-51 52-51s52 21 52 51v27c0 25-22 42-52 42s-52-17-52-42V79Z" fill="#b77d56"/>
+          <ellipse cx="61" cy="83" rx="5" ry="7" fill="#2e211b"/><ellipse cx="99" cy="83" rx="5" ry="7" fill="#2e211b"/><ellipse cx="80" cy="101" rx="19" ry="14" fill="#e4b48f"/><ellipse cx="80" cy="96" rx="6" ry="5" fill="#2e211b"/><path d="M72 108c4 5 12 5 16 0" fill="none" stroke="#68412e" stroke-linecap="round" stroke-width="3"/><path d="M45 126c10-8 20-12 35-12s25 4 35 12" fill="none" stroke="#e4b48f" stroke-linecap="round" stroke-width="7"/>
+        </svg>
+        <span class="bear-spark bear-spark-one"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></span><span class="bear-spark bear-spark-two"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></span>
+      </div>
+      <div class="promo-modal-content"><div class="modal-kicker"><svg class="icon" aria-hidden="true"><use href="#i-gift"/></svg>ПРИГЛАСИ ДРУГА</div><h2 id="promo-title">Подари другу звёзды,<br>а себе забери <span>«Медведя»</span></h2><p class="promo-lead">За каждого друга, который выполнит условия, ты получишь от нас Telegram-подарок. Количество подарков не ограничено.</p>
+        <div class="promo-condition"><span class="condition-star"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></span><strong>Друг покупает пакет от 100 звёзд</strong><span>Это условие для одного подарка</span></div>
+        <ol class="promo-steps"><li><span>1</span><p>Расскажи другу о магазине и передай свой Telegram-юзернейм.</p></li><li><span>2</span><p>Пусть друг купит пакет от <strong>100 звёзд</strong>.</p></li><li><span>3</span><p>При оплате друг пишет админу <a href="https://t.me/op_star" target="_blank" rel="noopener noreferrer">@op_star</a> твой юзернейм.</p></li></ol>
+        <div class="referral-username" id="referral-username"><div><span>ТВОЙ ЮЗЕРНЕЙМ</span><strong id="referral-handle">Открой сайт в Telegram</strong></div><button type="button" id="copy-referral" aria-label="Скопировать свой Telegram-юзернейм" disabled><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg></button></div>
+        <p class="promo-footnote">После проверки заказа администратор отправит тебе подарок «Медведь». Приглашай сколько угодно друзей.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="modal checkout-modal" id="checkout-dialog" aria-labelledby="checkout-title">
+    <div class="modal-scroll checkout-scroll">
+      <button class="modal-close" type="button" data-close-dialog aria-label="Закрыть окно"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+      <div class="checkout-heading"><div class="checkout-mark"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></div><div><div class="modal-kicker">ОФОРМЛЕНИЕ ЗАКАЗА</div><h2 id="checkout-title">Остался один шаг</h2></div></div>
+      <div class="checkout-progress"><span class="progress-step is-current" id="progress-one"><b>1</b> Твой аккаунт</span><span class="progress-line"></span><span class="progress-step" id="progress-two"><b>2</b> Оплата</span></div>
+      <div class="checkout-order"><div class="checkout-order-icon"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></div><div class="checkout-order-info"><strong id="checkout-stars">100 звёзд</strong><span>Telegram Stars</span></div><strong class="checkout-order-price" id="checkout-price">150 ₽</strong></div>
+      <section class="checkout-step" id="username-step" aria-labelledby="username-heading">
+        <h3 id="username-heading">Куда отправить звёзды?</h3><p class="checkout-description">Проверь Telegram-юзернейм. Если открыл сайт в Telegram, он подставится автоматически.</p>
+        <form id="username-form" novalidate><label for="telegram-username">Твой Telegram-юзернейм</label><div class="username-input-wrap"><span>@</span><input id="telegram-username" name="username" type="text" placeholder="username" autocomplete="nickname" autocapitalize="none" spellcheck="false" maxlength="33" inputmode="text" aria-describedby="username-help username-error"></div><small id="username-help">Без пробелов, например: @alex</small><small class="field-error" id="username-error" role="alert"></small><button class="primary-button checkout-next" type="submit">Далее <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button></form>
+      </section>
+      <section class="checkout-step" id="payment-step" aria-labelledby="payment-heading" hidden>
+        <h3 id="payment-heading">Оплати переводом на Сбер</h3><p class="checkout-description" id="payment-description">Переведи ровно эту сумму. После оплаты открой чат с администратором и прикрепи фото чека.</p>
+        <div class="payment-requisites" id="payment-requisites"></div>
+        <div class="payment-amount"><div><span id="payment-label">К оплате</span><strong id="payment-amount">150 ₽</strong></div><button type="button" class="copy-button" id="copy-amount"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg><span>Скопировать сумму</span></button></div>
+        <div class="payment-reminder" id="payment-reminder"><span class="reminder-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><span>После перевода приложи фото чека в чате с <strong>@op_star</strong></span></div>
+        <a class="primary-button checkout-admin-link" id="admin-link" href="https://t.me/op_star" target="_blank" rel="noopener noreferrer">Оплатил — написать админу <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <button class="back-to-username" id="back-to-username" type="button">← Изменить юзернейм</button>
+      </section>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
